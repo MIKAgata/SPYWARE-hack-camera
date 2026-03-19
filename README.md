@@ -1,9 +1,9 @@
-CameraMalware
+# CameraMalware
 CameraMalware adalah sebuah program simulasi malware sederhana yang ditulis dalam Python. Program ini dirancang untuk tujuan edukasi guna memahami cara kerja malware yang dapat mengakses kamera, mengambil gambar secara berkala, mengirimkannya ke server penyerang (C2), serta membuat dirinya tetap berjalan setiap kali sistem dinyalakan (persistence).
 
 ⚠️ Peringatan: Program ini hanya untuk pembelajaran dan pengujian keamanan di lingkungan yang sah. Menggunakan kode ini untuk mengakses kamera orang lain tanpa izin adalah ilegal dan tidak etis.
 
-Fitur
+## Fitur
 Akses Kamera: Membuka kamera (indeks 0 dan 1) menggunakan OpenCV.
 
 Pengambilan Gambar: Mengambil gambar secara periodik dan menyimpannya dengan nama unik berdasarkan waktu.
@@ -14,7 +14,7 @@ Persistence: Menambahkan entri ke crontab pengguna agar program berjalan otomati
 
 Loop Eksekusi: Berjalan terus-menerus dengan jeda 5 menit antar pengambilan gambar.
 
-Persyaratan
+## Persyaratan
 Python 3.x
 
 Pustaka: opencv-python (cv2)
@@ -31,7 +31,7 @@ Copy
 
 Download
 pip install opencv-python
-Instalasi
+## Instalasi
 Clone atau unduh kode program.
 
 Pastikan semua persyaratan terpenuhi.
